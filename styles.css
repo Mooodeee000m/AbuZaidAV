@@ -227,7 +227,7 @@ ul {
 }
 
 .logo img {
-    height: 40px; /* Adjust as needed */
+    height: 80px; /* Adjust as needed */
     margin-right: var(--spacing-sm);
     flex-shrink: 0; /* Prevent shrinking on smaller screens */
 }
