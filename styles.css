@@ -836,50 +836,151 @@ ul {
     font-weight: 600;
 }
 
+/* --- Main Container for "Other Ways to Connect" Section --- */
 .contact-details-wrapper {
-    background-color: var(--clr-white);
-    padding: var(--spacing-xxl);
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--shadow-light);
+    /* Existing: text-align: left; */
+    text-align: center; /* Change: Center the heading and content within the wrapper */
+    
+    padding: var(--spacing-xxl) var(--spacing-lg); /* Adjust overall section padding */
+    
+    display: flex; /* Enable Flexbox for horizontal arrangement of contact info items */
+    flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+    justify-content: center; /* Center the contact info items horizontally */
+    gap: var(--spacing-xl, 30px); /* Add space between the contact info items. Using a fallback value if --spacing-xl isn't ideal for gap. */
+    
+    max-width: 1200px; /* Optional: Limit the maximum width of the section for better readability */
+    margin: 0 auto; /* Optional: Center the entire wrapper on the page */
 }
 
+/* --- Heading Styling for "Other Ways to Connect" --- */
 .contact-details-wrapper h2 {
-    text-align: left;
-    margin-bottom: var(--spacing-xl);
-    color: var(--clr-primary-dark);
+    text-align: center; /* Change: Center the heading to match the new layout */
+    width: 100%; /* Ensure the heading takes full width above the items */
+    margin-bottom: var(--spacing-xxl, 40px); /* More space below the heading */
+    font-size: var(--font-size-xxl, 2.5em); /* Make heading larger */
+    color: var(--clr-primary-dark); /* Keep your existing color variable */
+    font-weight: 700; /* Make heading bold */
 }
 
+/* --- Styling for Each Contact Info Box (Email, WhatsApp, Office) --- */
 .contact-info-item {
-    display: flex;
-    align-items: flex-start;
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
+    background-color: var(--clr-white, #ffffff); /* White background for the boxes */
+    border: 1px solid var(--clr-border-light, #e0e0e0); /* A subtle border */
+    border-radius: var(--border-radius-md, 12px); /* Slightly rounded corners */
+    padding: var(--spacing-xl, 35px); /* Inner spacing within each box */
+    
+    /* Flexbox for arranging items within *this* box */
+    /* Existing: display: flex; align-items: flex-start; gap: var(--spacing-lg); */
+    display: flex; /* Keep flexbox */
+    flex-direction: column; /* Change: Stack contents (icon, h3, p) vertically */
+    align-items: center; /* Change: Center contents horizontally within the box */
+    text-align: center; /* Ensure text is centered */
+    
+    flex: 1 1 calc(33.333% - var(--spacing-xl, 30px) * 2 / 3); /* Calculate width for 3 items per row, accounting for gap */
+    max-width: 380px; /* Maximum width for each box on large screens */
+    min-height: 280px; /* Optional: Ensures consistent height for visual balance */
+    justify-content: flex-start; /* Aligns content to the top within the box */
+
+    box-shadow: var(--shadow-soft, 0 6px 20px rgba(0, 0, 0, 0.08)); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
 }
 
+.contact-info-item:hover {
+    transform: translateY(-8px); /* Lifts the box slightly on hover */
+    box-shadow: var(--shadow-hover, 0 12px 30px rgba(0, 0, 0, 0.15)); /* Stronger shadow on hover */
+}
+
+/* --- Styling for Icons within Each Box --- */
 .contact-info-item img {
-    height: 40px; /* Icon size */
-    flex-shrink: 0;
-    margin-top: var(--spacing-xs);
+    /* Existing: height: 40px; flex-shrink: 0; margin-top: var(--spacing-xs); */
+    width: 70px; /* Change: Makes icons larger for better visibility */
+    height: 70px; /* Change: Maintain aspect ratio */
+    margin-bottom: var(--spacing-lg, 25px); /* Change: More space below the icon */
+    margin-top: 0; /* Change: Remove top margin if using flex-direction: column */
+    /* Assuming your SVG icons are styled to pick up color from CSS if needed */
+    color: var(--clr-accent-blue, #007bff); /* Example: Use a specific blue variable for icon color */
 }
 
+/* --- Styling for Sub-headings (Email Us, WhatsApp, Our Office) --- */
 .contact-info-item h3 {
-    margin-bottom: var(--spacing-xs);
-    font-size: var(--font-size-lg);
-    color: var(--clr-accent-teal);
+    /* Existing: margin-bottom: var(--spacing-xs); font-size: var(--font-size-lg); color: var(--clr-accent-teal); */
+    margin-bottom: var(--spacing-md, 15px); /* More space below heading */
+    font-size: var(--font-size-xl, 1.8em); /* Larger, more prominent sub-headings */
+    color: var(--clr-primary-dark, #0056b3); /* Use your primary dark color or a specific blue */
+    font-weight: 600; /* Make headings bold */
 }
 
+/* --- Styling for Paragraphs within the boxes --- */
 .contact-info-item p {
-    font-size: var(--font-size-base);
-    color: var(--clr-secondary-slate);
-    line-height: 1.5;
+    /* Existing: font-size: var(--font-size-base); color: var(--clr-secondary-slate); line-height: 1.5; */
+    font-size: var(--font-size-md, 1.1em); /* Slightly larger text for readability */
+    color: var(--clr-text-medium, #555); /* General text color */
+    line-height: 1.6; /* Improve readability */
+    margin-bottom: var(--spacing-sm, 10px); /* Adjust spacing */
 }
 
+/* --- Styling for the small-text paragraph --- */
 .contact-info-item p.small-text {
-    font-size: var(--font-size-sm);
+    /* Existing: font-size: var(--font-size-sm); */
+    font-size: var(--font-size-sm, 0.95em); /* Keep your small font size */
+    color: var(--clr-text-light, #777); /* Lighter grey for supplementary info */
+    margin-top: auto; /* Pushes this text to the bottom if min-height is set */
 }
 
+/* --- Styling for Links within the boxes --- */
 .contact-info-item a {
-    font-weight: 600;
+    /* Existing: font-weight: 600; */
+    font-weight: 600; /* Keep bold links */
+    color: var(--clr-accent-teal, #007bff); /* Use your accent color or a primary blue */
+    text-decoration: none; /* Remove default underline */
+}
+
+.contact-info-item a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* --- Styling for the HR (Horizontal Rule) --- */
+/* Your HTML has <hr>, but your current CSS doesn't style it. */
+/* This will give it a light, subtle line. */
+.contact-info-item hr {
+    border: none; /* Remove default browser border */
+    border-top: 1px solid var(--clr-border-light, #eee); /* Add a subtle top border */
+    width: 60%; /* Control the width of the separator */
+    margin: var(--spacing-md, 20px) 0; /* Add vertical space around the separator */
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .contact-info-item {
+        flex: 1 1 calc(50% - var(--spacing-xl, 30px) / 2); /* Two items per row on medium screens */
+        max-width: calc(50% - var(--spacing-xl, 30px) / 2);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-details-wrapper {
+        padding: var(--spacing-lg, 40px) var(--spacing-md, 15px); /* Adjust padding for smaller screens */
+    }
+    .contact-details-wrapper h2 {
+        font-size: var(--font-size-xl, 2em); /* Smaller heading on mobile */
+        margin-bottom: var(--spacing-xl, 30px);
+    }
+    .contact-info-item {
+        flex: 1 1 90%; /* One item per row on mobile phones */
+        max-width: 90%; /* Limit width to avoid stretching too wide */
+        padding: var(--spacing-lg, 25px); /* Adjust padding for smaller boxes */
+    }
+    .contact-info-item img {
+        width: 60px; /* Slightly smaller icons on mobile */
+        height: 60px;
+    }
+    .contact-info-item h3 {
+        font-size: var(--font-size-lg, 1.5em);
+    }
+    .contact-info-item p {
+        font-size: var(--font-size-base, 1em);
+    }
 }
 
 .faq-item {
