@@ -92,39 +92,43 @@
             <div class="container contact-grid">
                 <div class="contact-form-wrapper">
                     <h2>Send Us a Message</h2>
-                    <form id="contactForm" name="contact" method="POST" data-netlify="true">
-                        
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" required aria-required="true">
-                        </div>
-                        <div class="form-group">
-                            <label for="company">Company (Optional)</label>
-                            <input type="text" id="company" name="company">
-                        </div>
-                        <div class="form-group">
-                            <label for="service-needed">Service Needed</label>
-                            <select id="service-needed" name="service_needed" required aria-required="true">
-                                <option value="">Select a service...</option>
-                                <option value="Network Consulting">Network Consulting</option>
-                                <option value="AV Integration">AV Integration</option>
-                                <option value="Remote Audit">Remote Audit</option>
-                                <option value="QoS & Multicast">QoS & Multicast</option>
-                                <option value="Structured Cabling">Structured Cabling</option>
-                                <option value="General Inquiry">General Inquiry</option>
-                                <option value="Other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+                    <form id="contactForm" action="https://formsubmit.co/your@email.com" method="POST">
+    <!-- عناصر مخفية خاصة بـ Formsubmit -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://abuzaidav.com/thank-you.html">
+
+    <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required aria-required="true">
+    </div>
+    <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required aria-required="true">
+    </div>
+    <div class="form-group">
+        <label for="company">Company (Optional)</label>
+        <input type="text" id="company" name="company">
+    </div>
+    <div class="form-group">
+        <label for="service-needed">Service Needed</label>
+        <select id="service-needed" name="service_needed" required aria-required="true">
+            <option value="">Select a service...</option>
+            <option value="Network Consulting">Network Consulting</option>
+            <option value="AV Integration">AV Integration</option>
+            <option value="Remote Audit">Remote Audit</option>
+            <option value="QoS & Multicast">QoS & Multicast</option>
+            <option value="Structured Cabling">Structured Cabling</option>
+            <option value="General Inquiry">General Inquiry</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send Message</button>
+</form>
+
                 </div>
 
                 <div class="contact-details-wrapper">
