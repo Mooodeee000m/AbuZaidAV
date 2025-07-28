@@ -92,13 +92,8 @@
             <div class="container contact-grid">
                 <div class="contact-form-wrapper">
                     <h2>Send Us a Message</h2>
-                    <form id="contactForm" action="YOUR_FORMSPREE_OR_NETLIFY_URL_HERE" method="POST">
-                        <p class="form-note">
-                            This is an HTML-only form. To make it functional, you will need to
-                            integrate a backend service like <a href="https://formspree.io/" target="_blank">Formspree.io</a>,
-                            <a href="https://www.netlify.com/products/forms/" target="_blank">Netlify Forms</a>, or set up your own server-side handler.
-                            Simply replace "YOUR_FORMSPREE_OR_NETLIFY_URL_HERE" in the `action` attribute.
-                        </p>
+                    <form id="contactForm" name="contact" method="POST" data-netlify="true">
+                        
                         <div class="form-group">
                             <label for="name">Your Name</label>
                             <input type="text" id="name" name="name" required aria-required="true">
